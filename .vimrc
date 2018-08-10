@@ -15,14 +15,11 @@ nmap <C-l> <C-W>l
 
 " general config ---------------------------------------------------------
 
-"主题
+" 主题
 color molokai
 
 " 语法高亮
 syntax on
-
-
-
 
 " 字符长度限制 TODO 分文件
 let &colorcolumn=join(range(121,121),",")
@@ -42,7 +39,6 @@ highlight SignColumn ctermbg=NONE
 "代码折叠
 set foldmethod=indent
 set foldlevel=99
-
 
 "不需要备份
 set nobackup
@@ -176,13 +172,6 @@ let NERDTreeShowHiddle=1
 " ctrlp config
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-" multiple-cursors
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<leader>n'
-let g:multi_cursor_prev_key='<leader>p'
-let g:multi_cursor_skip_key='<leader>x'
-let g:multi_cursor_quit_key='<Esc>'
-
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 " vim-snack config 
@@ -213,7 +202,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'pangloss/vim-javascript'
 Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'

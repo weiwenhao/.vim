@@ -13,11 +13,7 @@ nmap <C-k> <C-W>k
 nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
-" autocmd ----------------------------------------------------------------
-
-
 " general config ---------------------------------------------------------
-
 
 "主题
 color molokai
@@ -33,8 +29,6 @@ let &colorcolumn=join(range(121,121),",")
 
 " 高亮查找匹配
 set hlsearch
-" 搜索忽略大小写
-set ignorecase
 
 " 显示行号
 set nu
@@ -74,9 +68,7 @@ set softtabstop =4
 set shiftwidth  =4       " >> indents by 4 spaces.
 set shiftround             " >> indents to next multiple of 'shiftwidth'.
 
-autocmd filetype javascript,vue,html,css,xml set sw=2
-autocmd filetype javascript,vue,html,css,xml set ts=2
-autocmd filetype javascript,vue,html,css,xml set sts=2
+
 
 set backspace   =indent,eol,start
 
@@ -106,6 +98,15 @@ set autoread
 set hlsearch
 set incsearch
 
+
+" autocmd ----------------------------------------------------------------
+
+autocmd filetype javascript,vue,html,css,xml set sw=2
+autocmd filetype javascript,vue,html,css,xml set ts=2
+autocmd filetype javascript,vue,html,css,xml set sts=2
+
+
+" plugged config ---------------------------------------------------------
 
 "ale config
 let g:ale_sign_column_always = 1

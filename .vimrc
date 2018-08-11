@@ -5,15 +5,6 @@ let mapleader = " "
 "inoremap <leader>w <Esc>:w<cr>
 noremap <leader>w :w<cr>
 
-"imap jk <Esc>
-"imap kj <Esc>
-
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
-
-
 inoremap <C-e> <End>
 noremap <C-e> <End>
 
@@ -166,7 +157,7 @@ function! LightlineLinterOK() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '😆 ' : ''
+  return l:counts.total == 0 ? '😆' : ''
 endfunction
 
 " Update and show lightline but only if it's visible (e.g., not in Goyo)

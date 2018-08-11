@@ -1,11 +1,22 @@
 let mapleader = " "
 
 "map config -----------------------------------------------------------
+
 "inoremap <leader>w <Esc>:w<cr>
 noremap <leader>w :w<cr>
 
+"imap jk <Esc>
+"imap kj <Esc>
+
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+
 inoremap <C-e> <End>
 noremap <C-e> <End>
+
 
 " Super fast window movement shortcuts
 nmap <C-j> <C-W>j
@@ -169,21 +180,32 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHiddle=1
 
-" ctrlp config
+" CtrlP config
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+nmap <leader><leader> :CtrlPBuffer<CR>
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtHistory(-1)':       ['<c-n>'],
+    \ 'PrtHistory(1)':        ['<c-p>'],
+    \ 'AcceptSelection("e")': ['<cr>', '<c-o>', '<2-LeftMouse>'],
+    \  'PrtExpandDir()':       ['<tab>'],
+    \ 'PrtCurStart()':        ['<c-a>'],
+    \ 'PrtCurEnd()':          ['<c-e>'],
+    \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
+    \ 'PrtCurRight()':        ['<c-l>', '<right>'],
+    \ 'PrtClearCache()':      ['<c-r>'],
+    \ }
+
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
+
+
 " vim-snack config 
 let g:sneak#label = 1
 "map f <Plug>Sneak_f
 "map F <Plug>Sneak_F
 "map t <Plug>Sneak_t
 "map T <Plug>Sneak_T
-
-" bufferexplorer config
-nmap <leader><leader> :BufExplorer<CR>
-let g:BufExplorerDefaultHelp=0
 
                 
 " nerdcommenter config
@@ -209,7 +231,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'justinmk/vim-sneak'
-Plug 'corntrace/bufexplorer'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'posva/vim-vue'

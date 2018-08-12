@@ -92,9 +92,15 @@ set clipboard=unnamed
 
 "文件自动检测外部更改
 set autoread
+
 "高亮查找匹配
 set hlsearch
 set incsearch
+
+" buffer
+" 切换前后buffer
+nnoremap <leader>p :bprevious<CR>
+nnoremap <leader>n :bnext<CR>
 
 
 " autocmd ----------------------------------------------------------------
@@ -157,7 +163,7 @@ function! LightlineLinterOK() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '😆' : ''
+  return l:counts.total == 0 ? ' 😆 ' : ''
 endfunction
 
 " Update and show lightline but only if it's visible (e.g., not in Goyo)
@@ -173,7 +179,7 @@ let NERDTreeShowHiddle=1
 
 " CtrlP config
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-nmap <leader><leader> :CtrlPBuffer<CR>
+nmap <tab> :CtrlPBuffer<CR>
 let g:ctrlp_prompt_mappings = {
     \ 'PrtHistory(-1)':       ['<c-n>'],
     \ 'PrtHistory(1)':        ['<c-p>'],

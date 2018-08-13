@@ -15,13 +15,13 @@ let s:gray1  = '#696773' " 深
 let s:gray2  = '#EAEAEA' " 浅
 let s:gray3  = '#C9C9C9' " 中
 
-let s:p.normal.left     = [ [ s:bg, s:blue ], [ s:gray1, s:gray3 ] ]
+let s:p.normal.left     = [ [ s:bg, s:blue, 'bold'], [ s:gray1, s:gray3, 'bold'] ]
 let s:p.normal.middle   = [ [ s:gray1, s:gray2 ] ]
 let s:p.normal.right   = [ [ s:bg, s:blue, 'bold' ], [ s:bg, s:blue, 'bold' ] ]
 let s:p.normal.error   = [ [ s:red2,   s:gray3 ] ]
 let s:p.normal.warning = [ [ s:yellow, s:gray3 ] ]
 
-let s:p.insert.left     = [ [ s:bg, s:green ], [ s:gray1, s:gray3 ] ]
+let s:p.insert.left     = [ [ s:bg, s:green, 'bold' ], [ s:gray1, s:gray3, 'bold'] ]
 let s:p.insert.right   = [ [ s:bg, s:green, 'bold' ], [ s:bg, s:green, 'bold' ] ]
 
 let s:p.inactive.left   = [ [ s:bg,  s:gray3 ], [ s:bg, s:gray3 ] ]

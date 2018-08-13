@@ -18,7 +18,8 @@ nmap <C-l> <C-W>l
 " general config ---------------------------------------------------------
 
 " 主题
-color molokai
+set background=light
+colorscheme PaperColor
 
 " 语法高亮
 syntax on
@@ -99,9 +100,8 @@ set incsearch
 
 " buffer
 " 切换前后buffer
-nnoremap <leader>p :bprevious<CR>
-nnoremap <leader>n :bnext<CR>
-
+nnoremap <leader>[ :bprevious<CR>
+nnoremap <leader>] :bnext<CR>
 
 " autocmd ----------------------------------------------------------------
 
@@ -131,7 +131,7 @@ highlight clear ALEWarningSign
 
 "lightline config
 let g:lightline = {
-\ 'colorscheme': 'wombat',
+\ 'colorscheme': 'custom_light',
 \ 'active': {
 \   'left': [['mode', 'paste'], ['filename', 'modified']],
 \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
@@ -147,6 +147,8 @@ let g:lightline = {
 \   'linter_errors': 'error'
 \ },
 \ }
+
+
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
@@ -237,6 +239,11 @@ let g:ycm_semantic_triggers =  {
 			\ }
 
 
+
+" Bbye config
+nnoremap <leader>q :Bdelete<CR>
+
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -251,6 +258,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'posva/vim-vue'
+Plug 'moll/vim-bbye'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 

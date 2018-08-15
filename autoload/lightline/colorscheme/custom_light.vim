@@ -18,8 +18,8 @@ let s:gray3  = '#C9C9C9' " 中
 let s:p.normal.left     = [ [ s:bg, s:blue, 'bold'], [ s:gray1, s:gray3, 'bold'] ]
 let s:p.normal.middle   = [ [ s:gray1, s:gray2 ] ]
 let s:p.normal.right   = [ [ s:bg, s:blue, 'bold' ], [ s:bg, s:blue, 'bold' ] ]
-let s:p.normal.error   = [ [ s:red2,   s:gray3 ] ]
-let s:p.normal.warning = [ [ s:yellow, s:gray3 ] ]
+let s:p.normal.error   = [ [ s:gray1,   s:gray3 ] ]
+let s:p.normal.warning = [ [ s:gray1, s:gray3 ] ]
 
 let s:p.insert.left     = [ [ s:bg, s:green, 'bold' ], [ s:gray1, s:gray3, 'bold'] ]
 let s:p.insert.right   = [ [ s:bg, s:green, 'bold' ], [ s:bg, s:green, 'bold' ] ]

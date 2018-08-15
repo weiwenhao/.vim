@@ -39,9 +39,31 @@ highlight cursorline cterm=NONE
 " highlight LineNr ctermbg=NONE
 highlight SignColumn ctermbg=NONE
 
-"代码折叠
+" 开启文件类型侦测
+filetype on         
+" 根据侦测到的不同类型加载对应的插件
+filetype plugin on  
+
+" 根据文件类型设置缩进
+autocmd filetype javascript,vue,html,css,xml set sw=2
+autocmd filetype javascript,vue,html,css,xml set ts=2
+autocmd filetype javascript,vue,html,css,xml set sts=2
+
+
+"tab indents by 4 sapces
+set softtabstop =4
+set shiftwidth  =4       " >> indents by 4 spaces.
+set shiftround             " >> indents to next multiple of 'shiftwidth'.
+
+
+
+" 代码折叠
 set foldmethod=indent
 set foldlevel=99
+" 保存折叠
+au BufWinLeave * silent mkview 
+au BufWinEnter * silent loadview
+
 
 "不需要备份
 set nobackup
@@ -62,13 +84,6 @@ set autoindent
 "use spaces instead of tabs
 set expandtab
 
-"tab indents by 4 sapces
-set softtabstop =4
-set shiftwidth  =4       " >> indents by 4 spaces.
-set shiftround             " >> indents to next multiple of 'shiftwidth'.
-
-
-
 set backspace   =indent,eol,start
 
 " 无需保存即可在缓冲区中切换
@@ -83,10 +98,6 @@ set showcmd
 "智能缩进
 set smartindent
 
-" 开启文件类型侦测
-filetype on         
-" 根据侦测到的不同类型加载对应的插件
-filetype plugin on  
 
 "共享剪切板
 set clipboard=unnamed
@@ -104,11 +115,6 @@ nnoremap <leader>[ :bprevious<CR>
 nnoremap <leader>] :bnext<CR>
 
 " autocmd ----------------------------------------------------------------
-
-autocmd filetype javascript,vue,html,css,xml set sw=2
-autocmd filetype javascript,vue,html,css,xml set ts=2
-autocmd filetype javascript,vue,html,css,xml set sts=2
-
 
 " plugged config ---------------------------------------------------------
 
@@ -181,7 +187,7 @@ let NERDTreeShowHiddle=1
 
 " CtrlP config
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-nmap <tab> :CtrlPBuffer<CR>
+nmap <leader><leader> :CtrlPBuffer<CR>
 let g:ctrlp_prompt_mappings = {
     \ 'PrtHistory(-1)':       ['<c-n>'],
     \ 'PrtHistory(1)':        ['<c-p>'],
@@ -208,8 +214,9 @@ let g:sneak#label = 1
 
                 
 " nerdcommenter config
-let g:NERDSpaceDelims=1
-
+let g:NERDSpaceDelims=1 " 在注释的后面添加一个空格
+nnoremap <leader>cc <plug>NERDCommenterToggle
+vnoremap <leader>cc <plug>NERDCommenterToggle
 
 " emmet config
 let g:user_emmet_mode='i'

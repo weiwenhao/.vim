@@ -117,11 +117,19 @@ nnoremap <leader>] :bnext<CR>
 
 "ale config
 let g:ale_sign_column_always = 1
+let g:ale_linters = {
+\   'php': ['phpcs'],
+\}
 let g:ale_fixers = {
+\   'php': ['phpcbf'],
 \   'javascript': ['eslint'],
 \   'vue': ['eslint'],
 \   'html': ['eslint'],
 \}
+let g:ale_php_phpcs_standard = 'PSR1,PSR2'
+let g:ale_php_phpcbf_standard = 'PSR1,PSR2'
+let g:ale_php_phpcs_use_global = 1
+
 let g:ale_fix_on_save = 1
 "let g:ale_sign_error = '✗'
 let g:ale_sign_error = '😫'
@@ -249,8 +257,6 @@ nnoremap <leader>q :Bdelete<CR>
 
 
 " vim-gutentags config
-let g:gutentags_define_advanced_commands = 1
-let g:gutentags_trace = 1
 " gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
 
@@ -292,6 +298,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'posva/vim-vue'
 Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 
 call plug#end()
 

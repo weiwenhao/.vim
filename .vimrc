@@ -60,9 +60,6 @@ set shiftround             " >> indents to next multiple of 'shiftwidth'.
 " 代码折叠
 set foldmethod=indent
 set foldlevel=99
-" 保存折叠
-au BufWinLeave * silent mkview 
-au BufWinEnter * silent loadview
 
 
 "不需要备份

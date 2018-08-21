@@ -108,8 +108,8 @@ set incsearch
 
 " buffer
 " 切换前后buffer
-nnoremap <leader>[ :bprevious<CR>
-nnoremap <leader>] :bnext<CR>
+nnoremap [b :bprevious<CR>
+nnoremap ]b :bnext<CR>
 
 " autocmd ----------------------------------------------------------------
 
@@ -274,7 +274,7 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 " 检测 ~/.cache/tags 不存在就新建
 if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
+    silent! call mkdir(s:vim_tags, 'p')
 endif
 
 
@@ -299,6 +299,7 @@ Plug 'posva/vim-vue'
 Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 call plug#end()
 

@@ -204,7 +204,11 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtCurRight()':        ['<c-l>', '<right>'],
     \ 'PrtClearCache()':      ['<c-r>'],
     \ }
+let g:ctrlp_extensions = ['funky']
 
+" ctrlp-funky config
+nnoremap <Leader>f :CtrlPFunky<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
@@ -286,6 +290,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
 Plug 'pangloss/vim-javascript'
 Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'

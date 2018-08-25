@@ -305,6 +305,7 @@ Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 

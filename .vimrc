@@ -204,7 +204,11 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtCurRight()':        ['<c-l>', '<right>'],
     \ 'PrtClearCache()':      ['<c-r>'],
     \ }
+let g:ctrlp_extensions = ['funky']
 
+" ctrlp-funky config
+nnoremap <Leader>f :CtrlPFunky<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
@@ -258,24 +262,24 @@ nnoremap <leader>q :Bdelete<CR>
 
 " vim-gutentags config
 " gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
-" let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
 
 " 所生成的数据文件的名称
-" let g:gutentags_ctags_tagfile = '.tags'
+let g:gutentags_ctags_tagfile = '.tags'
 
 " " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
-" let s:vim_tags = expand('~/.cache/tags')
-" let g:gutentags_cache_dir = s:vim_tags
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
 
 " " 配置 ctags 的参数
-" let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-" let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-" let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
-" " 检测 ~/.cache/tags 不存在就新建
-" if !isdirectory(s:vim_tags)
-   " silent! call mkdir(s:vim_tags, 'p')
-" endif
+" 检测 ~/.cache/tags 不存在就新建
+if !isdirectory(s:vim_tags)
+    silent! call mkdir(s:vim_tags, 'p')
+endif
 
 
 
@@ -286,6 +290,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
 Plug 'pangloss/vim-javascript'
 Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'
@@ -300,9 +305,8 @@ Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'phpactor/ncm2-phpactor'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 

@@ -234,6 +234,7 @@ let g:user_emmet_expandabbr_key = '<c-f>'
 
 " vue config
 autocmd FileType vue syntax sync fromstart
+let g:vue_disable_pre_processors=1
 
 
 " YouCompleteMe config

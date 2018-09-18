@@ -298,9 +298,13 @@ Plug 'posva/vim-vue'
 Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
 
+" php
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'tpope/vim-commentary'
 
+Plug 'tpope/vim-commentary'
+Plug 'kovisoft/slimv'
+
+" scheme
 call plug#end()
 

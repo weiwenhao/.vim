@@ -183,8 +183,6 @@ endfunction
 autocmd User ALELintPost call lightline#update()
 
 
-
-
 " NERDTree config
 map <silent> <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
@@ -216,11 +214,6 @@ let g:javascript_plugin_jsdoc = 1
 
 " vim-snack config 
 let g:sneak#label = 1
-"map f <Plug>Sneak_f
-"map F <Plug>Sneak_F
-"map t <Plug>Sneak_t
-"map T <Plug>Sneak_T
-
                 
 " nerdcommenter config
 let g:NERDSpaceDelims=1 " 在注释的后面添加一个空格
@@ -294,7 +287,7 @@ Plug 'tacahiroy/ctrlp-funky'
 Plug 'pangloss/vim-javascript'
 Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim', { 'for': ['vue', 'html']}
 Plug 'justinmk/vim-sneak'

@@ -1,3 +1,5 @@
+" 迁移 => neovim
+
 let mapleader = " "
 
 "map config -----------------------------------------------------------
@@ -221,9 +223,8 @@ nnoremap <leader>cc <plug>NERDCommenterToggle
 vnoremap <leader>cc <plug>NERDCommenterToggle
 
 " emmet config
-let g:user_emmet_mode='i'
-let g:user_emmet_expandabbr_key = '<c-f>'
-
+"let g:user_emmet_mode='i'
+"letder>u :call phpactor#UseAdd()<CR>ku g:user_emmet_expandabbr_key = '<cnmap <Leader>u :call phpactor#UseAdd()<CR>-f>'
 
 " vue config
 autocmd FileType vue syntax sync fromstart
@@ -277,7 +278,15 @@ endif
 
 
 
+" slimv config
+let g:paredit_electric_return=0
 
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+" namespace 
+nmap <Leader>u :call phpactor#UseAdd()<CR>
 
 call plug#begin('~/.vim/plugged')
 
@@ -293,16 +302,18 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim', { 'for': ['vue', 'html']}
 Plug 'justinmk/vim-sneak'
 Plug 'w0rp/ale'
-Plug 'scrooloose/nerdcommenter'
 Plug 'posva/vim-vue'
 Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
 
 " php
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
+" comment
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
+
+" lisp
 Plug 'kovisoft/slimv'
 
 " scheme

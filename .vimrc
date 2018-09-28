@@ -192,7 +192,6 @@ let NERDTreeShowHiddle=1
 
 " CtrlP config
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-nmap <leader><leader> :CtrlPBuffer<CR>
 let g:ctrlp_prompt_mappings = {
     \ 'PrtHistory(-1)':       ['<c-n>'],
     \ 'PrtHistory(1)':        ['<c-p>'],
@@ -205,10 +204,11 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtClearCache()':      ['<c-r>'],
     \ }
 let g:ctrlp_extensions = ['funky']
-
+nmap <leader><leader> :CtrlPBuffer<CR>
 " ctrlp-funky config
 nnoremap <Leader>f :CtrlPFunky<Cr>
 let g:ctrlp_funky_syntax_highlight = 1
+
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
@@ -271,6 +271,12 @@ let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
+let g:gutentags_exclude = ['*.html', 
+                            \ '*.phar', '*.ini', '*.rst', '*.md',
+                            \ '*vendor/*/test*', '*vendor/*/Test*',
+                            \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
+                            \ '*var/cache*', '*var/log*']
+
 " 检测 ~/.cache/tags 不存在就新建
 if !isdirectory(s:vim_tags)
     silent! call mkdir(s:vim_tags, 'p')
@@ -282,15 +288,20 @@ endif
 let g:paredit_electric_return=0
 
 
+" phpactor
+nnoremap <Leader>u :call phpactor#UseAdd()<CR>
+let g:phpactorBranch = "develop"
+
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-" namespace 
-nmap <Leader>u :call phpactor#UseAdd()<CR>
+" phpcd
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
@@ -306,8 +317,15 @@ Plug 'posva/vim-vue'
 Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
 
+" completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " php
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'phpactor/phpactor' ,  { 'for': 'php'}
+Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+
+
 
 " comment
 Plug 'scrooloose/nerdcommenter'
@@ -316,6 +334,5 @@ Plug 'tpope/vim-commentary'
 " lisp
 Plug 'kovisoft/slimv'
 
-" scheme
 call plug#end()
 

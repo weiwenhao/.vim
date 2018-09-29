@@ -290,7 +290,6 @@ let g:paredit_electric_return=0
 
 " phpactor
 nnoremap <Leader>u :call phpactor#UseAdd()<CR>
-let g:phpactorBranch = "develop"
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -306,7 +305,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'pangloss/vim-javascript'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'for': 'c' }
 Plug 'marijnh/tern_for_vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
@@ -322,7 +321,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " php
 Plug 'phpactor/phpactor' ,  { 'for': 'php'}
-Plug 'kristijanhusak/deoplete-phpactor'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 

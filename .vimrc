@@ -10,6 +10,8 @@ noremap <leader>w :w<cr>
 noremap <C-e> <End>
 inoremap <C-e> <End>
 
+" 清除搜索高亮
+nnoremap \ :noh<return>
 
 " Super fast window movement shortcuts
 nmap <C-j> <C-W>j
@@ -293,6 +295,7 @@ nnoremap <Leader>u :call phpactor#UseAdd()<CR>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " phpcd
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
@@ -315,6 +318,7 @@ Plug 'w0rp/ale'
 Plug 'posva/vim-vue'
 Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'tpope/vim-surround'
 
 " completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -331,6 +335,7 @@ Plug 'tpope/vim-commentary'
 
 " lisp
 Plug 'kovisoft/slimv'
+
 
 call plug#end()
 

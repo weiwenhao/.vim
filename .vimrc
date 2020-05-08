@@ -10,6 +10,11 @@ noremap <leader>w :w<cr>
 noremap <C-e> <End>
 inoremap <C-e> <End>
 
+"jk 代替 esc 退出编辑模式
+#inoremap jk <Esc>
+
+" 清除搜索高亮
+nnoremap \ :noh<return>
 
 " Super fast window movement shortcuts
 nmap <C-j> <C-W>j
@@ -72,7 +77,7 @@ set confirm
 
 
 "鼠标可用
-set mouse=a
+set mouse=v
 
 "c文件自动缩进
 set cindent
@@ -289,15 +294,15 @@ let g:paredit_electric_return=0
 
 
 " phpactor
-nnoremap <Leader>u :call phpactor#UseAdd()<CR>
-let g:phpactorBranch = "develop"
+"nnoremap <Leader>u :call phpactor#UseAdd()<CR>
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
+"inoremap <expr><TAB>  pumvisible() ? '\<C-n>' : '\<TAB>'
 
 " phpcd
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
+"let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+" let g:deoplete#ignore_sources.php = ['omni']
 
 call plug#begin('~/.vim/plugged')
 
@@ -306,7 +311,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'pangloss/vim-javascript'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'for': 'c' }
 Plug 'marijnh/tern_for_vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
@@ -316,14 +321,14 @@ Plug 'w0rp/ale'
 Plug 'posva/vim-vue'
 Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'tpope/vim-surround'
 
 " completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " php
-Plug 'phpactor/phpactor' ,  { 'for': 'php'}
-Plug 'kristijanhusak/deoplete-phpactor'
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+"Plug 'phpactor/phpactor' ,  { 'for': 'php'}
+" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 
 
@@ -334,5 +339,9 @@ Plug 'tpope/vim-commentary'
 " lisp
 Plug 'kovisoft/slimv'
 
-call plug#end()
+"lua
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-lua-ftplugin'
 
+
+call plug#end()

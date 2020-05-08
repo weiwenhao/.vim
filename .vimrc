@@ -11,7 +11,7 @@ noremap <C-e> <End>
 inoremap <C-e> <End>
 
 "jk 代替 esc 退出编辑模式
-#inoremap jk <Esc>
+"inoremap jk <Esc>
 
 " 清除搜索高亮
 nnoremap \ :noh<return>
@@ -342,6 +342,5 @@ Plug 'kovisoft/slimv'
 "lua
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-lua-ftplugin'
-
 
 call plug#end()

@@ -237,18 +237,18 @@ let g:vue_disable_pre_processors=1
 
 
 " YouCompleteMe config
-let g:ycm_global_ycm_extra_conf='~/.vim/configs/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf='~/.vim/configs/.ycm_extra_conf.py'
 
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_server_log_level = 'info'
+"let g:ycm_add_preview_to_completeopt = 0
+"let g:ycm_show_diagnostics_ui = 0
+"let g:ycm_server_log_level = 'info'
 " let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_complete_in_strings=1
-let g:ycm_key_invoke_completion = '<c-z>'
-set completeopt=menu,menuone
+"let g:ycm_collect_identifiers_from_comments_and_strings = 1
+"let g:ycm_complete_in_strings=1
+"let g:ycm_key_invoke_completion = '<c-z>'
+"set completeopt=menu,menuone
 
-noremap <c-z> <NOP>
+"noremap <c-z> <NOP>
 
 " let g:ycm_semantic_triggers =  {
 " 			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
@@ -262,30 +262,30 @@ nnoremap <leader>q :Bdelete<CR>
 
 " vim-gutentags config
 " gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
-let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+"let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
 
 " 所生成的数据文件的名称
-let g:gutentags_ctags_tagfile = '.tags'
+"let g:gutentags_ctags_tagfile = '.tags'
 
 " " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
-let s:vim_tags = expand('~/.cache/tags')
-let g:gutentags_cache_dir = s:vim_tags
+"let s:vim_tags = expand('~/.cache/tags')
+"let g:gutentags_cache_dir = s:vim_tags
 
 " " 配置 ctags 的参数
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+"let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+"let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+"let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
-let g:gutentags_exclude = ['*.html', 
-                            \ '*.phar', '*.ini', '*.rst', '*.md',
-                            \ '*vendor/*/test*', '*vendor/*/Test*',
-                            \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
-                            \ '*var/cache*', '*var/log*']
+"let g:gutentags_exclude = ['*.html', 
+"                            \ '*.phar', '*.ini', '*.rst', '*.md',
+"                            \ '*vendor/*/test*', '*vendor/*/Test*',
+"                            \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
+"                            \ '*var/cache*', '*var/log*']
 
 " 检测 ~/.cache/tags 不存在就新建
-if !isdirectory(s:vim_tags)
-    silent! call mkdir(s:vim_tags, 'p')
-endif
+"if !isdirectory(s:vim_tags)
+"silent! call mkdir(s:vim_tags, 'p')
+    "endif
 
 
 
@@ -306,19 +306,19 @@ let g:paredit_electric_return=0
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'pangloss/vim-javascript'
-Plug 'Valloric/YouCompleteMe', { 'for': 'c' }
+"Plug 'Valloric/YouCompleteMe', { 'for': 'c' }
 Plug 'marijnh/tern_for_vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
-Plug 'mattn/emmet-vim', { 'for': ['vue', 'html']}
+"Plug 'mattn/emmet-vim', { 'for': ['vue', 'html']}
 Plug 'justinmk/vim-sneak'
 Plug 'w0rp/ale'
-Plug 'posva/vim-vue'
+"Plug 'posva/vim-vue'
 Plug 'moll/vim-bbye'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-surround'
@@ -333,14 +333,14 @@ Plug 'tpope/vim-surround'
 
 
 " comment
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-commentary'
 
 " lisp
 Plug 'kovisoft/slimv'
 
 "lua
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-lua-ftplugin'
+"Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-lua-ftplugin'
 
 call plug#end()
